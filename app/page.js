@@ -1,101 +1,82 @@
 import Image from "next/image";
-
+import Link from "next/link";
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen text-white">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center text-center py-20 px-6">
+        <h1 className="text-5xl md:text-6xl font-extrabold">
+          Welcome to <span className="text-yellow-300">YapYap</span>
+        </h1>
+        <p className="text-lg md:text-xl text-gray-200 mt-4 max-w-2xl">
+          The fastest, most secure, and fun way to chat with your friends, family, and teams!
+        </p>
+        <Link
+          href="/forums"
+          className="mt-6 px-6 py-3 bg-yellow-300 text-gray-900 font-semibold text-lg rounded-full shadow-md hover:bg-yellow-400 transition-all"
+        >
+          Get Started for Free
+        </Link>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Features Section */}
+      <section className="py-16 px-6 bg-white text-gray-900 text-center">
+        <h2 className="text-4xl font-bold">Why Choose YapYap?</h2>
+        <div className="grid md:grid-cols-3 gap-10 mt-10 max-w-5xl mx-auto">
+          <div className="p-6 shadow-lg rounded-lg bg-gray-100">
+            <h3 className="text-2xl font-semibold">🔒 Secure Messaging</h3>
+            <p className="mt-3 text-gray-600">End-to-end encryption ensures your chats stay private.</p>
+          </div>
+          <div className="p-6 shadow-lg rounded-lg bg-gray-100">
+            <h3 className="text-2xl font-semibold">⚡ Instant Chat</h3>
+            <p className="mt-3 text-gray-600">Send messages in real-time with lightning-fast speed.</p>
+          </div>
+          <div className="p-6 shadow-lg rounded-lg bg-gray-100">
+            <h3 className="text-2xl font-semibold">🎨 Custom Themes</h3>
+            <p className="mt-3 text-gray-600">Personalize your chat with custom themes and emojis.</p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-16 px-6 text-center">
+        <h2 className="text-4xl font-bold">Pricing Plans</h2>
+        <div className="grid md:grid-cols-3 gap-10 mt-10 max-w-5xl mx-auto">
+          <div className="p-6 shadow-lg rounded-lg bg-gray-800">
+            <h3 className="text-2xl font-semibold">🚀 Free Plan</h3>
+            <p className="mt-3 text-gray-300">Basic chat features with up to 3 group chats.</p>
+            <p className="mt-4 text-2xl font-bold">$0/month</p>
+          </div>
+          <div className="p-6 shadow-lg rounded-lg bg-yellow-400 text-gray-900">
+            <h3 className="text-2xl font-semibold">🔥 Pro Plan</h3>
+            <p className="mt-3">Unlimited chats, custom themes, and cloud backup.</p>
+            <p className="mt-4 text-2xl font-bold">$9.99/month</p>
+          </div>
+          <div className="p-6 shadow-lg rounded-lg bg-gray-800">
+            <h3 className="text-2xl font-semibold">🏢 Business Plan</h3>
+            <p className="mt-3 text-gray-300">Team collaboration, admin controls, and priority support.</p>
+            <p className="mt-4 text-2xl font-bold">$29.99/month</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className=" flex flex-col py-16 px-6 bg-yellow-300 text-gray-900 text-center justify-center items-center">
+        <h2 className="text-4xl font-bold">Start Chatting Today!</h2>
+        <p className="mt-3 text-lg">Join thousands of users on YapYap.</p>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/signup"
+          className="mt-6 px-6 py-3 bg-gray-900  text-white font-semibold text-lg rounded-full shadow-md hover:bg-gray-700 transition-all"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          Sign Up Now
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+    </main>
   );
+}
+
+
+export const metadata = {
+  title: "Home - YapYap",
+  description: "YapYap is a modern chat application designed for seamless conversations. Stay connected with friends, family, and teams with real-time messaging, secure encryption, and a sleek, user-friendly interface. Whether it's casual chats or important discussions, YapYap makes communication effortless and fun. 🚀💬"
 }
